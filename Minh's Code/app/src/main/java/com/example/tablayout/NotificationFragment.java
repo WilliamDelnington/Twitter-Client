@@ -2,12 +2,17 @@ package com.example.tablayout;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,14 +20,17 @@ import androidx.viewpager.widget.ViewPager;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class NotificationFragment extends Fragment {
+public class NotificationFragment extends Fragment
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private View mView;
     private View overlay;
+    private DrawerLayout drawerLayout;
 
     // FloatingActionButtons
     FloatingActionButton addButton, postButton, photosButton, spacesButton, goLiveButton;
@@ -122,15 +130,29 @@ public class NotificationFragment extends Fragment {
                 // Chuyển đến SettingFragment
                 Fragment settingFragment = new SettingsFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-<<<<<<< HEAD
+
                 transaction.replace(R.id.fragment_container, settingFragment); // Thay đổi ID theo layout của bạn
-=======
+
                 transaction.add(R.id.fragment_container, settingFragment); // Thay đổi ID theo layout của bạn
->>>>>>> cb08050 (Combine Search part and modify Notification part)
+
                 transaction.addToBackStack(null); // Thêm vào back stack
                 transaction.commit();
             }
         });
+
+        drawerLayout = mView.findViewById(R.id.notification_main);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(),
+                drawerLayout,
+                R.string.openDrawer,
+                R.string.closeDrawer
+        );
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = mView.findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         return mView;
     }
@@ -163,5 +185,60 @@ public class NotificationFragment extends Fragment {
 
         addButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_add));  // Change back to add icon
         isFabMenuOpen = false;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceRate) {
+        super.onViewCreated(view, savedInstanceRate);
+
+//      As when this was used on onCreateView, it returns null, but not when on this method.
+//      And there's also a possibility of the icon returns null for the call, too.
+        View icon = getView().findViewById(R.id.user_button);
+
+        if (icon != null) {
+            icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            });
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment;
+        if (item.getItemId() == R.id.Profile) {
+            fragment = new ProfileFragment();
+        }
+        else if (item.getItemId() == R.id.Jobs) {
+            fragment = new JobsFragment();
+        }
+        else if (item.getItemId() == R.id.Premium) {
+            fragment = new PremiumFragment();
+        }
+        else if (item.getItemId() == R.id.Bookmarks) {
+            fragment = new BookmarksFragment();
+        }
+        else if (item.getItemId() == R.id.Lists) {
+            fragment = new ListsFragment();
+        }
+        else if (item.getItemId() == R.id.Spaces) {
+            fragment = new SpacesFragment();
+        }
+        else if (item.getItemId() == R.id.Monetization) {
+            fragment = new MonetizationFragment();
+        }
+        else {
+            fragment = new Fragment();
+        }
+
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main, fragment);
+        fragmentTransaction.commit();
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
     }
 }

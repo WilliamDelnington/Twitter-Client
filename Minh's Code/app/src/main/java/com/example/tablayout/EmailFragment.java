@@ -98,7 +98,7 @@ public class EmailFragment extends Fragment implements NavigationView.OnNavigati
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = view.findViewById(R.id.nav_view);
+        NavigationView navigationView = view.findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         FloatingActionButton floatingActionButton = view.findViewById(R.id.floatingActionButton);
@@ -115,7 +115,7 @@ public class EmailFragment extends Fragment implements NavigationView.OnNavigati
     public void onViewCreated(View view, Bundle savedInstanceRate) {
         super.onViewCreated(view, savedInstanceRate);
 
-        View icon = getView().findViewById(R.id.account_icon);
+        View icon = getView().findViewById(R.id.account_icon_email);
 
         if (icon != null) {
             icon.setOnClickListener(new View.OnClickListener() {

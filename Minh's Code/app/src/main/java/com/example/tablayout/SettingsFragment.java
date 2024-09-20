@@ -1,23 +1,17 @@
 package com.example.tablayout;
 
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.provider.ContactsContract;
-=======
->>>>>>> cb08050 (Combine Search part and modify Notification part)
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-=======
 
 import android.widget.ImageButton;
 
->>>>>>> cb08050 (Combine Search part and modify Notification part)
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -56,15 +50,12 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
-<<<<<<< HEAD
                 Log.i("Test", "On click");
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
                 transaction.addToBackStack(null);
                 transaction.commit();
-=======
                 ChangingFragment(new NotificationFragment());
->>>>>>> cb08050 (Combine Search part and modify Notification part)
             }
         });
 
@@ -74,14 +65,11 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
                 Log.i("Test", "On click");
-<<<<<<< HEAD
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
                 transaction.addToBackStack(null);
                 transaction.commit();
-=======
                 ChangingFragment(new NotificationFragment());
->>>>>>> cb08050 (Combine Search part and modify Notification part)
             }
         });
         // Xử lý sự kiện khi nhấn vào mục "Bộ lọc"
@@ -89,14 +77,11 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
-<<<<<<< HEAD
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
                 transaction.addToBackStack(null);
                 transaction.commit();
-=======
                 ChangingFragment(new NotificationFragment());
->>>>>>> cb08050 (Combine Search part and modify Notification part)
             }
         });
 
@@ -105,21 +90,16 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến trang tùy chọn
-<<<<<<< HEAD
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, new OptionsFragment()); // Thay bằng Fragment tùy chọn tương ứng
                 transaction.addToBackStack(null);
                 transaction.commit();
-=======
                 ChangingFragment(new NotificationFragment());
->>>>>>> cb08050 (Combine Search part and modify Notification part)
             }
         });
 
         return view;
     }
-<<<<<<< HEAD
-=======
 
     public void ChangingFragment(Fragment fragment){
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -128,5 +108,4 @@ public class SettingsFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
->>>>>>> cb08050 (Combine Search part and modify Notification part)
 }

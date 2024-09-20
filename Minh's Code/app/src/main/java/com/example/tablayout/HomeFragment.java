@@ -2,13 +2,19 @@ package com.example.tablayout;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,9 +22,10 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
 
     private View view, overlay;
     private ViewPager viewPager;
@@ -31,6 +38,8 @@ public class HomeFragment extends Fragment {
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
+
+    private DrawerLayout drawerLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -116,6 +125,75 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        drawerLayout = view.findViewById(R.id.home_main);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(),
+                drawerLayout,
+                R.string.openDrawer,
+                R.string.closeDrawer
+        );
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = view.findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceRate) {
+        super.onViewCreated(view, savedInstanceRate);
+
+//      As when this was used on onCreateView, it returns null, but not when on this method.
+//      And there's also a possibility of the icon returns null for the call, too.
+        View icon = getView().findViewById(R.id.account_icon);
+
+        if (icon != null) {
+            icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            });
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment;
+        if (item.getItemId() == R.id.Profile) {
+            fragment = new ProfileFragment();
+        }
+        else if (item.getItemId() == R.id.Jobs) {
+            fragment = new JobsFragment();
+        }
+        else if (item.getItemId() == R.id.Premium) {
+            fragment = new PremiumFragment();
+        }
+        else if (item.getItemId() == R.id.Bookmarks) {
+            fragment = new BookmarksFragment();
+        }
+        else if (item.getItemId() == R.id.Lists) {
+            fragment = new ListsFragment();
+        }
+        else if (item.getItemId() == R.id.Spaces) {
+            fragment = new SpacesFragment();
+        }
+        else if (item.getItemId() == R.id.Monetization) {
+            fragment = new MonetizationFragment();
+        }
+        else {
+            fragment = new Fragment();
+        }
+
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main, fragment);
+        fragmentTransaction.commit();
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
     }
 }

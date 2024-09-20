@@ -81,8 +81,6 @@
     <string name="setting_and_support"><![CDATA[Settings & Support]]></string>
     <string name="settings_privacy">Settings and Privacy</string>
     <string name="help_center">Help Center</string>
-    <string name="openDrawer">Drawer Opened</string>
-    <string name="closeDrawer">Drawer Closed</string>
 
     <string name="All">All</string>
     <string name="Verified">Verified</string>
@@ -92,5 +90,80 @@
     <string name="email_setting">Email Setting</string>
     <string name="create_group">Create a group</string>
 
+    <string name="introduction">Introducing Grok 2</string>
+    <string name="short_desc">Our newest AI assistant, powered by X</string>\
+    <string name="btn_text">Subscribe Now</string>
+
+    <string name="grok">Grok</string>
+
+    <!--  Get creative part  -->
+
+    <string name="get_creative">Get Creative</string>
+    <string name="get_creative_text">Generate stunning visuals with our new image generation capabilities.</string>
+    <string name="creative_prompt">Make a cyberpunk picture</string>
+
+    <!--  Stay informed part  -->
+
+    <string name="stay_informed">Stay Informed</string>
+    <string name="stay_informed_text">Get up-to-date info on the latest news and trending topics, exclusively from X.</string>
+    <string name="inform_prompt">What is the latest Cybertruck news?</string>
+
+    <!--  Ask Anything part  -->
+
+    <string name="ask_anything">Ask Anything</string>
+    <string name="ask_anything_description">Grok can help with everyday tasks like writing emails, answering questions, and providing recipes.</string>
+    <string name="ask_prompt">Help me write an email</string>
+
+    <string name="ask_response">
+        Sure! I\'d be happy to help! Could you provide a bit more detail about the email? For example:\n\n
+        \t1. Who is the recipient?\n\n
+        \t2. What is the purpose of the email?\n\n
+        \t3. Any specific points or information you want to include?\n\n
+        Feel free to share any details that will help me craft the email for you.
+    </string>
+
+    <string name="inform_response">
+        Here are some of the latest updates on the Tesla Cybertruck:\n
+        1. Production Update: Tesla is currently producing about 1,300 Cybertrucks
+        per week and aims to increase this to 2,500 per week by the end of the year1.
+        This ramp-up is part of their plan to reach an annual production capacity of
+        250,000 units next year1.
+    </string>
+
+    <string name="name1">Cybertruck</string>
+    <string name="username1">\@cybertruck</string>
+    <string name="date1">Aug 1</string>
+    <string name="caption1">Paint job by Mother Nature</string>
+
+    <string name="name2">Elon Musk</string>
+    <string name="username2">\@elonmusk</string>
+    <string name="date2">Dec 1</string>
+    <string name="caption2">Cybertruck production line</string>
+
+    <string name="name3">Sawyer Merritt</string>
+    <string name="username3">\@SawyerMerritt</string>
+    <string name="date3">May 8</string>
+    <string name="caption3">Someone wrapped their Cybertruck in a rust wrap. Thoughts?</string>
+
+    <string name="image_description">To Avoid Warning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--  Name and username profile  -->
+    <string name="nav_name">Marcus Spartus</string>
+    <string name="nav_username">\@marcusspartus</string>
+
+    <string name="following_number">130</string>
+    <string name="followers_number">211</string>
+
+    <!--  Navigation bar designer  -->
+    <string name="nav_profile">Profile</string>
+    <string name="nav_premium">Premium</string>
+    <string name="nav_bookmarks">Bookmarks</string>
+    <string name="nav_lists">Lists</string>
+    <string name="nav_spaces">Spaces</string>
+    <string name="nav_monetization">Monetization</string>
+
+    <string name="openDrawer">Drawer Opened</string>
+    <string name="closeDrawer">Drawer Closed</string>
 
 </resources>

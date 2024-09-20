@@ -103,8 +103,6 @@ public class CommunityFragment extends Fragment  implements NavigationView.OnNav
         NavigationView navigationView = mview.findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
         return mview;
-
-
     }
 
     private void setSupportActionBar(Toolbar toolbar) {
