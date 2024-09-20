@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/post_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:orientation="horizontal"
+    tools:context=".PostContainer">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="90dp"
+        android:background="@drawable/post_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:id="@+id/post_header_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/account_icon"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/postName_1"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:text="@string/name1"
+                android:textColor="@color/white"
+                android:layout_marginStart="4dp"
+                android:textFontWeight="500"/>
+
+            <TextView
+                android:id="@+id/postUsername_1"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:text="@string/username1"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/postDate_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_header_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/postImage_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/image1"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/postCaption_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/caption1"
+                android:layout_marginStart="10dp"
+                android:maxWidth="140dp"
+                android:maxHeight="40dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="90dp"
+        android:background="@drawable/post_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/post_header_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/black"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/account_icon" />
+
+            <TextView
+                android:id="@+id/postName_3"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/name3"
+                android:textColor="@color/white"
+                android:textFontWeight="500" />
+
+            <TextView
+                android:id="@+id/postUsername_3"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/username3" />
+
+            <TextView
+                android:id="@+id/postDate_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/date3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/post_header_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/postImage_3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image3" />
+
+            <TextView
+                android:id="@+id/postCaption_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:maxWidth="140dp"
+                android:maxHeight="40dp"
+                android:text="@string/caption3"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="90dp"
+        android:background="@drawable/post_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <LinearLayout
+            android:id="@+id/post_header_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/black"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/account_icon" />
+
+            <TextView
+                android:id="@+id/postName_2"
+                android:layout_width="70dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/name2"
+                android:textColor="@color/white"
+                android:textFontWeight="500" />
+
+            <TextView
+                android:id="@+id/postUsername_2"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/username2" />
+
+            <TextView
+                android:id="@+id/postDate_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/date2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/post_header_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/postImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image2" />
+
+            <TextView
+                android:id="@+id/postCaption_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:maxWidth="140dp"
+                android:maxHeight="40dp"
+                android:text="@string/caption2"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
