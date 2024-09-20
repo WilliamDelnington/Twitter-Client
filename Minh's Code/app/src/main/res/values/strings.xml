@@ -166,4 +166,20 @@
     <string name="openDrawer">Drawer Opened</string>
     <string name="closeDrawer">Drawer Closed</string>
 
+    <string name="mentions_none_head">Join the conversation</string>
+    <string name="mentions_none_body">When someone on X mentions you in a post or reply, you\'ll find it here.</string>
+
+    <string name="verified_none_head">Nothing to see here - yet</string>
+    <string name="verified_none_body">
+        Likes, mentions, reposts, and a whole lot more - when it comes from a verified account, you\'ll find it here. \n\n
+
+        Not verified? Subscribe now to get a verified account and join other people in quality conversations.
+    </string>
+    <string name="subscribe_button_text">Subscribe</string>
+
+    <string name="notification_head_1">Mickey liked your post</string>
+    <string name="notification_body_1">Water</string>
+
+    <string name="notification_head_2">Daisy followed you</string>
+
 </resources>

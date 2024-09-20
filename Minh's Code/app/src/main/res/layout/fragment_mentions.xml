@@ -5,14 +5,32 @@
     android:layout_height="match_parent"
     android:layout_below="@+id/tab_layout"
     android:padding="16dp"
+    android:background="@color/black"
     tools:context=".notifiiiii.Mentions">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:text="Mentions"
-        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mentions_none_head"
+            android:textSize="35sp"
+            android:textColor="@color/white"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mentions_none_body"
+            android:textSize="17sp"
+            android:textColor="#9b9c9e"
+            android:padding="5dp"/>
+
+    </LinearLayout>
 
 </FrameLayout>

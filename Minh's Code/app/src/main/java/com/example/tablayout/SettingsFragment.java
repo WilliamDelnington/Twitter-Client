@@ -51,10 +51,6 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
                 Log.i("Test", "On click");
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
-                transaction.addToBackStack(null);
-                transaction.commit();
                 ChangingFragment(new NotificationFragment());
             }
         });
@@ -65,10 +61,6 @@ public class SettingsFragment extends Fragment {
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
                 Log.i("Test", "On click");
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
-                transaction.addToBackStack(null);
-                transaction.commit();
                 ChangingFragment(new NotificationFragment());
             }
         });
@@ -77,10 +69,6 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến trang bộ lọc
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new FilterFragment()); // Thay bằng Fragment bộ lọc tương ứng
-                transaction.addToBackStack(null);
-                transaction.commit();
                 ChangingFragment(new NotificationFragment());
             }
         });
@@ -90,10 +78,6 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Chuyển đến trang tùy chọn
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new OptionsFragment()); // Thay bằng Fragment tùy chọn tương ứng
-                transaction.addToBackStack(null);
-                transaction.commit();
                 ChangingFragment(new NotificationFragment());
             }
         });

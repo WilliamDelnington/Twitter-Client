@@ -33,7 +33,8 @@ public class NotificationFragment extends Fragment
     private DrawerLayout drawerLayout;
 
     // FloatingActionButtons
-    FloatingActionButton addButton, postButton, photosButton, spacesButton, goLiveButton;
+//    FloatingActionButton addButton;
+    FloatingActionButton postButton, photosButton, spacesButton, goLiveButton;
     boolean isFabMenuOpen = false;
 
     // TextViews for labels
@@ -56,7 +57,7 @@ public class NotificationFragment extends Fragment
         viewPager = mView.findViewById(R.id.notification_ViewPager);
         overlay = mView.findViewById(R.id.overlay);
 
-        addButton = mView.findViewById(R.id.add_button);
+//        addButton = mView.findViewById(R.id.add_button);
         postButton = mView.findViewById(R.id.post_button);
         photosButton = mView.findViewById(R.id.photos_button);
         spacesButton = mView.findViewById(R.id.spaces_button);
@@ -76,51 +77,51 @@ public class NotificationFragment extends Fragment
         tabLayout.setupWithViewPager(viewPager);
 
         // Add button click event
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isFabMenuOpen) {
-                    showFabMenu();
-                    overlay.setVisibility(View.VISIBLE);  // Show overlay
-                } else {
-                    closeFabMenu();
-                    overlay.setVisibility(View.GONE);  // Hide overlay
-                }
-            }
-        });
+//        addButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!isFabMenuOpen) {
+//                    showFabMenu();
+//                    overlay.setVisibility(View.VISIBLE);  // Show overlay
+//                } else {
+//                    closeFabMenu();
+//                    overlay.setVisibility(View.GONE);  // Hide overlay
+//                }
+//            }
+//        });
 
         // Handle clicks on the overlay to close the menu
-        overlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeFabMenu();
-                overlay.setVisibility(View.GONE);  // Hide overlay
-            }
-        });
+//        overlay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                closeFabMenu();
+//                overlay.setVisibility(View.GONE);  // Hide overlay
+//            }
+//        });
 
         // Handle clicks on the menu bar to close the menu and hide overlay
-        tabLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isFabMenuOpen) {
-                    closeFabMenu();
-                    overlay.setVisibility(View.GONE);  // Hide overlay
-                }
-            }
-        });
+//        tabLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (isFabMenuOpen) {
+//                    closeFabMenu();
+//                    overlay.setVisibility(View.GONE);  // Hide overlay
+//                }
+//            }
+//        });
 
         // Dismiss FAB menu on outside touch
-        mView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (isFabMenuOpen && event.getAction() == MotionEvent.ACTION_DOWN) {
-                    closeFabMenu();
-                    overlay.setVisibility(View.GONE);  // Hide overlay
-                    return true;
-                }
-                return false;
-            }
-        });
+//        mView.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                if (isFabMenuOpen && event.getAction() == MotionEvent.ACTION_DOWN) {
+//                    closeFabMenu();
+//                    overlay.setVisibility(View.GONE);  // Hide overlay
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
 
         // Initialize settings button
         ImageButton btnSettings = mView.findViewById(R.id.setting_button);
@@ -130,8 +131,6 @@ public class NotificationFragment extends Fragment
                 // Chuyển đến SettingFragment
                 Fragment settingFragment = new SettingsFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-
-                transaction.replace(R.id.fragment_container, settingFragment); // Thay đổi ID theo layout của bạn
 
                 transaction.add(R.id.fragment_container, settingFragment); // Thay đổi ID theo layout của bạn
 
@@ -157,35 +156,35 @@ public class NotificationFragment extends Fragment
         return mView;
     }
 
-    private void showFabMenu() {
-        postButton.show();
-        photosButton.show();
-        spacesButton.show();
-        goLiveButton.show();
+//    private void showFabMenu() {
+//        postButton.show();
+//        photosButton.show();
+//        spacesButton.show();
+//        goLiveButton.show();
+//
+//        textPost.setVisibility(View.VISIBLE);
+//        textPhotos.setVisibility(View.VISIBLE);
+//        textSpaces.setVisibility(View.VISIBLE);
+//        textGoLive.setVisibility(View.VISIBLE);
+//
+//        addButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_post));  // Change to close post
+//        isFabMenuOpen = true;
+//    }
 
-        textPost.setVisibility(View.VISIBLE);
-        textPhotos.setVisibility(View.VISIBLE);
-        textSpaces.setVisibility(View.VISIBLE);
-        textGoLive.setVisibility(View.VISIBLE);
-
-        addButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_post));  // Change to close post
-        isFabMenuOpen = true;
-    }
-
-    private void closeFabMenu() {
-        postButton.hide();
-        photosButton.hide();
-        spacesButton.hide();
-        goLiveButton.hide();
-
-        textPost.setVisibility(View.GONE);
-        textPhotos.setVisibility(View.GONE);
-        textSpaces.setVisibility(View.GONE);
-        textGoLive.setVisibility(View.GONE);
-
-        addButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_add));  // Change back to add icon
-        isFabMenuOpen = false;
-    }
+//    private void closeFabMenu() {
+//        postButton.hide();
+//        photosButton.hide();
+//        spacesButton.hide();
+//        goLiveButton.hide();
+//
+//        textPost.setVisibility(View.GONE);
+//        textPhotos.setVisibility(View.GONE);
+//        textSpaces.setVisibility(View.GONE);
+//        textGoLive.setVisibility(View.GONE);
+//
+//        addButton.setImageDrawable(getResources().getDrawable(R.drawable.ic_add));  // Change back to add icon
+//        isFabMenuOpen = false;
+//    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceRate) {
